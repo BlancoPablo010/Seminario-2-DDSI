@@ -1,9 +1,10 @@
-import { UserModel } from '../models/AppModel.js';
+import { UserModel } from '../models/UserModel.js';
 
 //Devolver todos los usuarios
 export const getAllUsers = async (req, res) => {
     try {
-        const users = await UserModel.findAll();
+        const users = await UserModel.findAll({
+        });
         res.json(users);
     } catch (error) {
         res.json({ message: error });
@@ -14,7 +15,7 @@ export const getAllUsers = async (req, res) => {
 export const getUserById = async (req, res) => {
     try {
         const user = await UserModel.findAll({
-            where:{ id:req.params.id }
+            where:{ id:req.params.id },
         });
         res.json(user);
     } catch (error) {
