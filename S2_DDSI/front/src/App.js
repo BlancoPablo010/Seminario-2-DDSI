@@ -11,7 +11,7 @@ function App() {
       </header>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={ <CompShowUser/>} />
+          {/*<Route path='/' element={ <CompShowUser/>} />*/}
         </Routes>
       </BrowserRouter>
       <CompShowUser></CompShowUser>

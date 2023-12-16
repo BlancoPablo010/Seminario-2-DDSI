@@ -1,4 +1,4 @@
-import { UserModel } from '../models/AppModel.js';
+import { UserModel } from '../models/UserModel.js';
 
 //Devolver todos los usuarios
 export const getAllUsers = async (req, res) => {

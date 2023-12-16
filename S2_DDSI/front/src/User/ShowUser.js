@@ -19,7 +19,7 @@ const CompShowUser = () => {
 
     //procedimiento para eliminar un usuario
     const deleteUser = async (id)=>{
-        axios.delete('${URI}${id}')
+        await axios.delete(`${URI}${id}`)
         getUsers()
     }
 
@@ -45,7 +45,7 @@ const CompShowUser = () => {
                                     <td>{user.telefono}</td>
                                     <td>{user.correo}</td>
                                     <td>
-                                        <Link to={'/edit/${user.id}'} className='btn btn-info'>Editar</Link>
+                                        {/*<Link to={`/edit/${user.id}`} className='btn btn-info'>Editar</Link>*/}
                                         <button onClick={()=>deleteUser(user.id)} className='btn btn-danger'>Eliminar</button>
                                     </td>
                                 </tr>
