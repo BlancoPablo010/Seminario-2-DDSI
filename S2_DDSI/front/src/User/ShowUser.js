@@ -26,7 +26,7 @@ const CompShowUser = () => {
         <div className='container'>
             <div className='row'>
                 <div className='col'>
-                    <Link to="/create" className='btn btn-primary mt-2 mb2'>Crear</Link>
+                    {<Link to="/create" className='btn btn-primary mt-2 mb2'>Crear</Link>}
                     <table className='table'>
                         <thead className='table-primary'>
                             <tr>
@@ -43,7 +43,7 @@ const CompShowUser = () => {
                                     <td>{user.telefono}</td>
                                     <td>{user.correo}</td>
                                     <td>
-                                        <Link to={`/edit/${user.id}`} className='btn btn-info'>Editar</Link>
+                                        {<Link to={`/edit/${user.id}`} className='btn btn-info'>Editar</Link>}
                                         <button onClick={()=>deleteUser(user.id)} className='btn btn-danger'>Eliminar</button>
                                     </td>
                                 </tr>

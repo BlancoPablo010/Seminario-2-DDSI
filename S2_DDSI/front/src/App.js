@@ -1,10 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import CompShowUser from './User/ShowUser';
-import CompAddUser from './User/CreateUser';
+import CompCreateUser from './User/CreateUser';
 import CompEditUser from './User/EditUser';
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -14,9 +13,9 @@ function App() {
       </header>
       <Router>
         <Routes>
-          <Route path="/" element={<CompShowUser />} />
-          <Route path="/create" element={<CompAddUser />} />
-          <Route path="/edit/:id" element={<CompEditUser />} />
+          {<Route path="/" element={<CompShowUser />} />}
+          {<Route path="/create" element={<CompAddUser />} />}
+          {<Route path="/edit/:id" element={<CompEditUser />} />}
         </Routes>
       </Router>
     </div>
