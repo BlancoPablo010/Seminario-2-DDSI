@@ -35,6 +35,22 @@ export const createUser = async (req, res) => {
     }
 };
 
+//Actualizar un usuario
+export const updateUser = async (req, res) => {
+    try {
+        await UserModel.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "message": "Usuario actualizado exitosamente"
+        });
+    } catch (error) {
+        res.json({ message: error });
+    }
+};
+
 //Eliminar un usuario
 export const deleteUser = async (req, res) => {
     try {

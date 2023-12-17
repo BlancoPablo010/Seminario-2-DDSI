@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import {Link} from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 
 const URI = 'http://localhost:8000/users/'
 
@@ -19,7 +18,7 @@ const CompShowUser = () => {
 
     //procedimiento para eliminar un usuario
     const deleteUser = async (id)=>{
-        axios.delete('${URI}${id}')
+        await axios.delete(`${URI}${id}`)
         getUsers()
     }
 
@@ -27,15 +26,14 @@ const CompShowUser = () => {
         <div className='container'>
             <div className='row'>
                 <div className='col'>
-                    {/*<Link to="/create" className='btn btn-primary mt-2 mb2'>Crear</Link>*/}
+                    {<Link to="/create" className='btn btn-primary mt-2 mb2'>Crear</Link>}
                     <table className='table'>
                         <thead className='table-primary'>
                             <tr>
                                 <th>Nombre</th>
                                 <th>Telefono</th>
                                 <th>Correo</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,7 +43,7 @@ const CompShowUser = () => {
                                     <td>{user.telefono}</td>
                                     <td>{user.correo}</td>
                                     <td>
-                                        <Link to={'/edit/${user.id}'} className='btn btn-info'>Editar</Link>
+                                        {<Link to={`/edit/${user.id}`} className='btn btn-info'>Editar</Link>}
                                         <button onClick={()=>deleteUser(user.id)} className='btn btn-danger'>Eliminar</button>
                                     </td>
                                 </tr>
