@@ -22,10 +22,10 @@ const CompEditUser = () => {
     }
 
     useEffect( ()=>{
-        getUserid()
-    })
+        getUserById()
+    },[])
 
-    const getUserid = async () => {
+    const getUserById = async () => {
         const res = await axios.get(URI+id)
         setNombre(res.data.nombre)
         setTelefono(res.data.telefono)
