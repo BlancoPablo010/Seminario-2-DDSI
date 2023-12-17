@@ -11,13 +11,13 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <Router>
+      <BrowserRouter>
         <Routes>
           {<Route path="/" element={<CompShowUser />} />}
-          {<Route path="/create" element={<CompAddUser />} />}
+          {<Route path="/create" element={<CompCreateUser />} />}
           {<Route path="/edit/:id" element={<CompEditUser />} />}
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
